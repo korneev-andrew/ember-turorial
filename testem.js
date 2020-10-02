@@ -1,17 +1,17 @@
 'use strict';
 
 module.exports = {
-  test_page: 'tests/index.html?hidepassed',
+  test_page: 'tests/index.html',
   disable_watching: true,
   launch_in_ci: [
-    'Chrome'
+    'chromium'
   ],
   launch_in_dev: [
-    'Chrome'
+    'chromium'
   ],
   browser_start_timeout: 120,
   browser_args: {
-    Chrome: {
+    chromium: {
       ci: [
         // --no-sandbox is needed when running Chrome inside a container
         process.env.CI ? '--no-sandbox' : null,

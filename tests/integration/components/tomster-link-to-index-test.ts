@@ -3,24 +3,24 @@ import { setupRenderingTest } from 'ember-qunit';
 import { render } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
 
-module('Integration | Component | people-list', function(hooks) {
+module('Integration | Component | tomster-link-to-index', function(hooks) {
   setupRenderingTest(hooks);
 
   test('it renders', async function(assert) {
     // Set any properties with this.set('myProperty', 'value');
     // Handle any actions with this.set('myAction', function(val) { ... });
 
-    await render(hbs`{{people-list}}`);
+    await render(hbs`{{tomster-link-to-index}}`);
 
-    assert.equal(this.element.textContent.trim(), '');
+    assert.equal(this.element.textContent!.trim(), '');
 
     // Template block usage:
     await render(hbs`
-      {{#people-list}}
+      {{#tomster-link-to-index}}
         template block text
-      {{/people-list}}
+      {{/tomster-link-to-index}}
     `);
 
-    assert.equal(this.element.textContent.trim(), 'template block text');
+    assert.equal(this.element.textContent!.trim(), '');
   });
 });
