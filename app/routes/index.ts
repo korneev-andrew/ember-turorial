@@ -15,7 +15,7 @@ export type RentalDTO = {
   description: string,
 };
 
-const COMMUNITY_CATEGORIES = [
+export const COMMUNITY_CATEGORIES = [
   'Condo',
   'Townhouse',
   'Apartment'
@@ -30,10 +30,10 @@ export default class Index extends Route.extend({
     const { data } = await response.json();
 
     return data.map((model: any) => {
-      const { attributes } = model;
+      const { id, attributes } = model;
       const type = COMMUNITY_CATEGORIES.includes(attributes.category) ? 'Community' : 'Standalone';
 
-      return {type, ...attributes};
+      return {id, type, ...attributes};
     });
   }
 }
